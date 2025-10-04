@@ -2,6 +2,3 @@
 .env
 wiki_cleaned_doubled.csv
 data/wikilarge/intermediate
-**/train.json
-**/validate.json
-**/test.json
