@@ -2,3 +2,6 @@
 .env
 wiki_cleaned_doubled.csv
 data/wikilarge/intermediate
+**/combined_dataset.csv
+*.pkl
+comparative_datasets
