@@ -1,5 +1,5 @@
 # Thesis-Project
-Currently in the early stages of developing a fine-grained, user-adaptive text simplification model for second language acquisition. 
+Currently in the middle stages of developing a fine-grained, mixture-of-experts text simplification model for second language acquisition. 
 
 # License
 
