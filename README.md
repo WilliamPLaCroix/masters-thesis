@@ -29,26 +29,22 @@ This work trains multiple low-rank adapters (LoRA) on sentence simplification da
 
 ```
 thesis-project/
-├── *data/*                          # Dataset preprocessing and annotation
-│   ├── wikilarge/                 # Preprocessed WikiLarge corpus
-│   └── scripts/                   # Data processing utilities
-├── models/                        # Model architectures and training
-│   ├── adapters/                  # Grade-specific LoRA adapters
-│   ├── base/                      # LLaMA3.2-3B-Instruct base model
-│   └── merged/                    # Merged adapter configurations
-├── experiments/                   # Experimental configurations
+├── experiments/
 │   ├── configs/                   # YAML configuration files
-│   ├── condor_jobs/              # HTCondor submit files
-│   └── scripts/                   # Training and inference scripts
-├── evaluation/                    # Evaluation framework
-│   ├── metrics/                   # FKGL, SARI, BERTScore, Perplexity
-│   └── analysis/                  # Results analysis notebooks
-├── results/                       # Experimental outputs
-│   ├── baseline/                  # Baseline system results
-│   ├── warmup/                    # Shared warm-up model results
-│   ├── graded/                    # Individual grade-specific adapters
-│   └── merged/                    # Merged adapter results
-└── notebooks/                     # Jupyter notebooks for analysis
+│   ├── inspection_logs/           # Model inspection and validation logs
+│   ├── logs/                      # Training logs
+│   ├── preprocessing/             # Data preprocessing scripts
+│   ── scripts/                   # Training and experimental scripts
+├── results/
+├── src/
+│   ├── custom_modules/            # Custom model components
+│   │   └── scripts/               # Module-specific scripts
+│   └── patches/
+│       └── LLaMA-Factory/         # Forked LLaMA-Factory modifications
+├── .gitignore
+├── LICENSE
+├── README.md
+└── requirements.txt
 ```
 note: datasets not uploaded to Github. Experiments download cleaned data subsets during training/eval from HuggingFace datasets.
 ---
