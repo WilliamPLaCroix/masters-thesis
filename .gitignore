@@ -5,3 +5,4 @@ data/wikilarge/intermediate
 **/combined_dataset.csv
 *.pkl
 comparative_datasets
+data/

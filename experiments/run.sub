@@ -1,31 +1,15 @@
 # HTCondor submit description file
 # Everything with a leading # is a comment
 
-universe                = vanilla
-initialdir              = /nethome/wlacroix/LLaMA-Factory
-executable              = /nethome/wlacroix/Thesis-Project/experiments_sarubi/run_sft_and_ppl_test.sh
+#universe                = docker
+#docker_image            = docker.coli.uni-saarland.de/wlacroix/thesis:lora_baseline
+initialdir              = /nethome/wlacroix/
+executable              = /nethome/wlacroix/Thesis-Project/run.sh
 output                  = /scratch/wlacroix/logs/run.sh.$(ClusterId).out
 error                   = /scratch/wlacroix/logs/err/run.sh.$(ClusterId).err
 log                     = /scratch/wlacroix/logs/log/run.sh.$(ClusterId).log
-# If all files are on the server, otherwise set to YES
-#should_transfer_files   = NO
-#when_to_transfer_output = ON_EXIT
+request_CPUs            = 1
+request_memory          = 10G
 request_GPUs            = 1
-request_CPUs            = 10
-request_memory          = 50G
-getenv                  = True
-requirements            = (GPUs_GlobalMemoryMb >= 64000)
-#64000
-+WantGPUHomeMounted     = true
-+MaxWallTime = 604800
-
+requirements            = (GPUs_GlobalMemoryMb >= 16000)
 queue 1
-
-
-# Pass seed as an argument to the script
-#arguments               = $(port) $(model_path) $(grade) $(line_to_skips) $(experiment_script)
-# Inline queue values
-#queue port, model_path, grade, line_to_skips, experiment_script from (
-#30048, /project/models/HF/meta-llama/Meta-Llama-3-8B-Instruct, -1, -1, phase_2_experiments/fvp_with_synthetic_data_creation_with_best_fitted_src_dis/syntactic_data_generation/run_eval_syntactic_data_creation.sh
-#)
-

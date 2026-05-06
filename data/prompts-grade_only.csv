@@ -1,6 +1,0 @@
-Level,des,system_prompt,user_prompt,output_prompt
-1,,"Please rewrite the following sentence to make it easily understandable by students in Grade {tgt_ideal_Grade}. Ensure that the rewritten sentence is grammatically correct, fluent, and retains the core message of the original sentence without changing its meaning.
-","Input sentence: {input_src}
-Please rewrite this Input sentence to make it easily understandable by students in Grade {tgt_ideal_Grade} while preserving the meaning:
-Please note, if the initial rewrite does not meet the specified grade level, you are encouraged to modify and regenerate the output until the criteria are satisfactorily met. The final output should only include the last, correct version of the rewritten sentence(s). Always output Rewritten sentence(s) within curly braces.","Rewritten sentence(s): {{output_text}}
-"
