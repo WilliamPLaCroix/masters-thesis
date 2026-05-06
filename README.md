@@ -34,7 +34,7 @@ thesis-project/
 │   ├── inspection_logs/           # Model inspection and validation logs
 │   ├── logs/                      # Training logs
 │   ├── preprocessing/             # Data preprocessing scripts
-│   ── scripts/                   # Training and experimental scripts
+│   └── scripts/                   # Training and experimental scripts
 ├── results/
 ├── src/
 │   ├── custom_modules/            # Custom model components
