@@ -1,8 +1,342 @@
-# Thesis-Project
-Currently in the middle stages of developing a fine-grained, mixture-of-experts text simplification model for second language acquisition. 
+# Precise, Grade-Specific Text Simplification via Weighted Adapter Merger
 
-# License
+**Master's Thesis - MSc Language Science and Technology**  
+*Saarland University, March 2026*
 
-[MIT license](./LICENSE)
+**Author:** William LaCroix  
+**Supervisors:** Prof. Dr. Alexander Koller, Dr. Ji-Ung Lee, Sarubi Thillainathan  
+**Chair for Computational Linguistics**
 
+---
 
+## Abstract
+
+This thesis investigates whether modular adapter composition can enable controllable readability in neural sentence simplification for second language learners. While educational reading materials must align with learner proficiency, most simplification systems treat complexity reduction as a binary task rather than targeting specific difficulty levels.
+
+This work trains multiple low-rank adapters (LoRA) on sentence simplification data labeled by readability grade level, then combines these grade-specific adapters via weighted parameter merging to approximate intermediate difficulty levels without training a separate model for every possible target grade.
+
+**Key Findings:**
+- Grade-specific adapters capture meaningful differences in linguistic complexity but only approximate their intended readability targets
+- Even the strongest models remain roughly one grade level away from the target on average
+- Adapter merging allows approximate interpolation between adjacent levels but does not outperpose single-adapter fine-tuned models
+- Merged configurations produce unstable behavior under many merge configurations
+
+**Conclusion:** Adapter merging enables modular recombination of simplification models but does not provide the precise readability control required for inter-grade alignment in text simplification for language learners.
+
+---
+
+## Repository Structure
+
+```
+thesis-project/
+├── data/                          # Dataset preprocessing and annotation
+│   ├── wikilarge/                 # Preprocessed WikiLarge corpus
+│   └── scripts/                   # Data processing utilities
+├── models/                        # Model architectures and training
+│   ├── adapters/                  # Grade-specific LoRA adapters
+│   ├── base/                      # LLaMA3.2-3B-Instruct base model
+│   └── merged/                    # Merged adapter configurations
+├── experiments/                   # Experimental configurations
+│   ├── configs/                   # YAML configuration files
+│   ├── condor_jobs/              # HTCondor submit files
+│   └── scripts/                   # Training and inference scripts
+├── evaluation/                    # Evaluation framework
+│   ├── metrics/                   # FKGL, SARI, BERTScore, Perplexity
+│   └── analysis/                  # Results analysis notebooks
+├── results/                       # Experimental outputs
+│   ├── baseline/                  # Baseline system results
+│   ├── warmup/                    # Shared warm-up model results
+│   ├── graded/                    # Individual grade-specific adapters
+│   └── merged/                    # Merged adapter results
+└── notebooks/                     # Jupyter notebooks for analysis
+```
+
+---
+
+## Research Questions
+
+**RQ1:** Do sentence simplification adapters trained on discrete grade levels reliably generate output that corresponds to their target grade level, as measured by standard readability metrics?
+
+**RQ2:** Can combining grade-specific adapters through weighted parameter merging improve the system's ability to generate text at intended readability levels?
+
+**RQ3:** Can a learnable weighting scheme over grade-specific adapters enable the generation of text at arbitrary intermediate readability levels not explicitly represented in training data?
+
+---
+
+## Methodology
+
+### Model Architecture
+- **Base Model:** LLaMA3.2-3B-Instruct
+- **Fine-Tuning:** Low-Rank Adaptation (LoRA)
+- **Training Strategy:** Two-stage approach
+  1. Shared warm-up model on all simplification data
+  2. Grade-specific adapters (Grades 2-12) from warm-up initialization
+
+### Dataset
+- **Source:** WikiLarge corpus (preprocessed)
+- **Annotation:** Flesch-Kincaid Grade Level (FKGL) labels
+- **Task:** Sentence-level simplification
+
+### Adapter Merging
+- **Primary Method:** DARE-TIES (Domain-Aware Representation Enhancement with Task-Informed Embedding Similarity)
+- **Strategies Evaluated:**
+  - Linear weighted averaging
+  - SVD-based compression
+  - Magnitude-based pruning
+  - Concatenation
+
+### Evaluation Metrics
+- **Readability:** Flesch-Kincaid Grade Level (FKGL)
+- **Fluency:** Perplexity
+- **Simplification Quality:** SARI, BERTScore F1
+- **Target Alignment:** Grade-level deviation
+
+---
+
+## Key Results
+
+### Baseline Performance
+- Standard simplification models lack fine-grained readability control
+- Binary simplification (complex → simple) insufficient for pedagogical applications
+
+### Grade-Specific Adapters
+- Individual adapters capture meaningful complexity differences
+- Average deviation: ~1 grade level from target
+- Best performance on mid-range grades (6-9)
+- Degraded performance on extreme grades (2-3, 11-12)
+
+### Adapter Merging
+- Approximate interpolation between adjacent grades possible
+- No substantial improvement over best single adapters
+- High variance in merged configurations
+- DARE-TIES outperforms other merge strategies but remains imprecise
+
+### Limitations
+- Readability control remains coarse rather than precise
+- FKGL-only evaluation may not capture pedagogical suitability
+- Sentence-level simplification ignores discourse coherence
+- English-only experiments limit generalizability
+
+---
+
+## Installation & Setup
+
+### Prerequisites
+```bash
+# Python 3.10+
+# CUDA-capable GPU (recommended: 24GB+ VRAM)
+# Conda or virtualenv
+
+conda create -n text-simplification python=3.10
+conda activate text-simplification
+```
+
+### Dependencies
+```bash
+pip install -r requirements.txt
+
+# Core dependencies:
+# - transformers>=4.35.0
+# - peft>=0.7.0
+# - torch>=2.1.0
+# - datasets>=2.14.0
+# - evaluate>=0.4.0
+# - sentencepiece
+# - textstat
+# - bert-score
+```
+
+### Dataset Preparation
+```bash
+# Download and preprocess WikiLarge
+cd data/scripts
+python prepare_wikilarge.py --output_dir ../wikilarge
+
+# Annotate with FKGL labels
+python annotate_fkgl.py --input_dir ../wikilarge --output_dir ../wikilarge/annotated
+```
+
+---
+
+## Usage
+
+### Training Grade-Specific Adapters
+
+```bash
+# 1. Train shared warm-up model
+python experiments/scripts/train_warmup.py \
+    --config experiments/configs/warmup_config.yaml
+
+# 2. Train grade-specific adapters (example: Grade 6)
+python experiments/scripts/train_graded.py \
+    --config experiments/configs/grade_6_config.yaml \
+    --warmup_path models/base/warmup_checkpoint
+```
+
+### Merging Adapters
+
+```bash
+# Merge adapters with DARE-TIES
+python experiments/scripts/merge_adapters.py \
+    --adapter_paths models/adapters/grade_5 models/adapters/grade_6 \
+    --weights 0.3 0.7 \
+    --merge_method dare_ties \
+    --output_path models/merged/grade_5.5_dare_ties
+```
+
+### Inference
+
+```bash
+# Generate simplifications with specific adapter
+python experiments/scripts/inference.py \
+    --adapter_path models/adapters/grade_6 \
+    --input_file data/test.txt \
+    --output_file results/grade_6_outputs.txt
+
+# Generate with merged adapter
+python experiments/scripts/inference.py \
+    --adapter_path models/merged/grade_5.5_dare_ties \
+    --input_file data/test.txt \
+    --output_file results/grade_5.5_merged_outputs.txt
+```
+
+### Evaluation
+
+```bash
+# Evaluate outputs
+python evaluation/scripts/evaluate.py \
+    --predictions results/grade_6_outputs.txt \
+    --references data/test_references.txt \
+    --sources data/test_sources.txt \
+    --metrics fkgl sari bertscore perplexity
+```
+
+---
+
+## Computational Requirements
+
+### Training
+- **Hardware:** Single NVIDIA A100 (40GB) or equivalent
+- **Time per adapter:** ~6-8 hours
+- **Storage:** ~5GB per grade-specific adapter
+- **Total training time:** ~80-100 hours for all adapters (Grades 2-12)
+
+### Inference
+- **Batch size:** 8-16 (depending on GPU memory)
+- **Throughput:** ~50-100 sentences/minute
+
+### HTCondor Configuration
+For cluster-based training, see `experiments/condor_jobs/` for submit files and resource specifications.
+
+---
+
+## Reproducing Results
+
+### Full Experimental Pipeline
+
+```bash
+# 1. Prepare data
+bash scripts/prepare_all_data.sh
+
+# 2. Train all models
+bash scripts/train_all_adapters.sh
+
+# 3. Generate merge configurations
+bash scripts/create_merge_configs.sh
+
+# 4. Run inference
+bash scripts/run_all_inference.sh
+
+# 5. Evaluate and analyze
+bash scripts/evaluate_all.sh
+python notebooks/analysis.ipynb
+```
+
+### Random Seeds
+All experiments use fixed random seeds for reproducibility:
+- NumPy: 42
+- PyTorch: 42
+- Transformers: 42
+
+---
+
+## Citation
+
+If you use this work, please cite:
+
+```bibtex
+@mastersthesis{lacroix2026GradeSpecificTextSimplification,
+  title={Precise, Grade-Specific Text Simplification via Weighted Adapter Merger for Second Language Acquisition},
+  author={LaCroix, William},
+  year={2026},
+  school={Saarland University},
+  type={Master's Thesis},
+  address={Saarbr{\"u}cken, Germany}
+}
+```
+
+---
+
+## Related Work
+
+This thesis builds on and contributes to the following research areas:
+
+### Controllable Text Simplification
+- Martin et al. (2020) - ACCESS: Controllable Sentence Simplification
+- Agrawal & Carpuat (2023) - Grade-level conditioning with T5
+- Thillainathan & Koller (2024) - Fine-grained control through in-context learning
+
+### Model Merging
+- Wortsman et al. (2022) - Model Soups
+- Li et al. (2022) - Branch-Train-Merge
+- Sukhbaatar et al. (2024) - Branch-Train-Mix
+- Yadav et al. (2023) - TIES merging
+- Yu et al. (2024) - DARE
+
+### Text Simplification for L2 Learning
+- Crossley et al. (2008) - Readability in SLA
+- Nation (2001) - Vocabulary learning
+- Rodrigo (2016) - Graded readers validation
+
+---
+
+## License
+
+This research code is released under the MIT License. See `LICENSE` for details.
+
+The WikiLarge dataset is used under its original license.
+
+---
+
+## Acknowledgments
+
+Special thanks to:
+- Dr. Ji-Ung Lee and Sarubi Thillainathan for thoughtful guidance throughout this project
+- Prof. Dr. Alexander Koller for years of mentorship
+
+---
+
+## Contact
+
+**William LaCroix**  
+Master's Student, Language Science and Technology  
+Saarland University  
+
+For questions about this research, please open an issue in this repository.
+
+---
+
+## Future Directions
+
+Potential extensions of this work:
+
+1. **Multi-metric optimization:** Incorporate linguistic features beyond FKGL
+2. **Human evaluation:** Conduct comprehension studies with L2 learners
+3. **Cross-lingual extension:** Test approach on non-English simplification
+4. **Document-level coherence:** Extend beyond sentence-level simplification
+5. **Curriculum alignment:** Map to pedagogical frameworks (CEFR, etc.)
+6. **Dynamic adapter selection:** Runtime selection based on input complexity
+
+---
+
+**Last Updated:** March 2026
