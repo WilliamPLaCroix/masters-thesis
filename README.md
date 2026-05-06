@@ -148,12 +148,7 @@ pip install -r requirements.txt
 
 ### Dataset Preparation
 ```bash
-# Download and preprocess WikiLarge
-cd data/scripts
-python prepare_wikilarge.py --output_dir ../wikilarge
-
-# Annotate with FKGL labels
-python annotate_fkgl.py --input_dir ../wikilarge --output_dir ../wikilarge/annotated
+*rewrite after full reorganization*
 ```
 
 ---
@@ -163,52 +158,27 @@ python annotate_fkgl.py --input_dir ../wikilarge --output_dir ../wikilarge/annot
 ### Training Grade-Specific Adapters
 
 ```bash
-# 1. Train shared warm-up model
-python experiments/scripts/train_warmup.py \
-    --config experiments/configs/warmup_config.yaml
-
-# 2. Train grade-specific adapters (example: Grade 6)
-python experiments/scripts/train_graded.py \
-    --config experiments/configs/grade_6_config.yaml \
-    --warmup_path models/base/warmup_checkpoint
+*rewrite after full reorganization*
 ```
 
 ### Merging Adapters
 
 ```bash
 # Merge adapters with DARE-TIES
-python experiments/scripts/merge_adapters.py \
-    --adapter_paths models/adapters/grade_5 models/adapters/grade_6 \
-    --weights 0.3 0.7 \
-    --merge_method dare_ties \
-    --output_path models/merged/grade_5.5_dare_ties
+*rewrite after full reorganization*
 ```
 
 ### Inference
 
 ```bash
-# Generate simplifications with specific adapter
-python experiments/scripts/inference.py \
-    --adapter_path models/adapters/grade_6 \
-    --input_file data/test.txt \
-    --output_file results/grade_6_outputs.txt
-
-# Generate with merged adapter
-python experiments/scripts/inference.py \
-    --adapter_path models/merged/grade_5.5_dare_ties \
-    --input_file data/test.txt \
-    --output_file results/grade_5.5_merged_outputs.txt
+*rewrite after full reorganization*
 ```
 
 ### Evaluation
 
 ```bash
 # Evaluate outputs
-python evaluation/scripts/evaluate.py \
-    --predictions results/grade_6_outputs.txt \
-    --references data/test_references.txt \
-    --sources data/test_sources.txt \
-    --metrics fkgl sari bertscore perplexity
+*rewrite after full reorganization*
 ```
 
 ---
@@ -235,21 +205,7 @@ For cluster-based training, see `experiments/condor_jobs/` for submit files and 
 ### Full Experimental Pipeline
 
 ```bash
-# 1. Prepare data
-bash scripts/prepare_all_data.sh
-
-# 2. Train all models
-bash scripts/train_all_adapters.sh
-
-# 3. Generate merge configurations
-bash scripts/create_merge_configs.sh
-
-# 4. Run inference
-bash scripts/run_all_inference.sh
-
-# 5. Evaluate and analyze
-bash scripts/evaluate_all.sh
-python notebooks/analysis.ipynb
+*rewrite after full reorganization*
 ```
 
 ### Random Seeds
