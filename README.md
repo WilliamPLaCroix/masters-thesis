@@ -29,7 +29,7 @@ This work trains multiple low-rank adapters (LoRA) on sentence simplification da
 
 ```
 thesis-project/
-├── data/                          # Dataset preprocessing and annotation
+├── *data/*                          # Dataset preprocessing and annotation
 │   ├── wikilarge/                 # Preprocessed WikiLarge corpus
 │   └── scripts/                   # Data processing utilities
 ├── models/                        # Model architectures and training
@@ -50,7 +50,7 @@ thesis-project/
 │   └── merged/                    # Merged adapter results
 └── notebooks/                     # Jupyter notebooks for analysis
 ```
-
+*note: datasets not uploaded to git. Experiments download cleaned data subsets during training/eval from HuggingFace datasets.
 ---
 
 ## Research Questions
