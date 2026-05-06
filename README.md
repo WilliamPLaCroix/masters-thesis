@@ -50,7 +50,7 @@ thesis-project/
 │   └── merged/                    # Merged adapter results
 └── notebooks/                     # Jupyter notebooks for analysis
 ```
-*note: datasets not uploaded to git. Experiments download cleaned data subsets during training/eval from HuggingFace datasets.
+note: datasets not uploaded to Github. Experiments download cleaned data subsets during training/eval from HuggingFace datasets.
 ---
 
 ## Research Questions
