@@ -1,0 +1,1125 @@
+{
+  "debug": {
+    "hf_hub_url": "williamplacroix/llamafactory_debug",
+    "columns": {
+	"prompt": "instruction",
+	"query": "input",
+	"response": "output"
+    }
+  },
+  "judge_rephrase_dataset": {
+    "file_name": "/nethome/wlacroix/false_refusal/data/judge_rephrase_dataset.jsonl",
+    "columns": {
+        "prompt": "instruction",
+        "query": "input",
+        "messages": "conversation"
+        }
+  },
+  "judge_ignore-word_dataset": {
+    "file_name": "/nethome/wlacroix/false_refusal/data/judge_ignore-word_dataset.jsonl",
+    "columns": {
+        "prompt": "instruction",
+        "query": "input",
+        "messages": "conversation"
+        }
+  },
+  "rephrased": {
+    "file_name": "/nethome/wlacroix/false_refusal/data/xsb_with_rephrased_prompts.jsonl",
+    "columns": {
+	"query": "rephrased-prompt"
+    }
+  },
+  "ignore-word": {
+    "file_name": "/nethome/wlacroix/false_refusal/data/xsb_with_rephrased_prompts.jsonl",
+    "columns": {
+	"query": "ignore-word_prompt"
+    }
+  },
+  "prompt_rephrasing": {
+    "file_name": "/nethome/wlacroix/false_refusal/data/xsb_ignore-word_system-prompt.jsonl",
+    "columns": {
+	"prompt": "system-prompt",
+	"query": "prompt"
+    }
+  },
+    "original_grade02_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade02",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade02_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade02",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade02_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade02",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade03_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade03",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade03_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade03",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade03_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade03",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade04_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade04",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade04_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade04",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade04_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade04",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade05_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade05",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade05_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade05",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade05_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade05",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade06_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade06",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade06_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade06",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade06_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade06",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade07_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade07",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade07_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade07",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade07_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade07",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade08_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade08",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade08_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade08",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade08_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade08",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade09_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade09",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade09_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade09",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade09_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade09",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade10_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade10",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade10_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade10",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade10_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade10",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade11_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade11",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade11_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade11",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade11_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade11",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade12_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade12",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade12_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade12",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_grade12_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-grade12",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_baseline_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-baseline",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_baseline_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-baseline",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "original_baseline_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "original-baseline",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade02_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade02",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade02_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade02",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade02_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade02",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade03_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade03",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade03_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade03",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade03_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade03",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade04_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade04",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade04_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade04",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade04_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade04",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade05_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade05",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade05_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade05",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade05_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade05",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade06_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade06",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade06_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade06",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade06_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade06",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade07_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade07",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade07_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade07",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade07_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade07",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade08_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade08",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade08_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade08",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade08_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade08",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade09_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade09",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade09_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade09",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade09_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade09",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade10_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade10",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade10_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade10",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade10_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade10",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade11_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade11",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade11_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade11",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade11_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade11",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade12_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade12",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade12_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade12",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_grade12_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-grade12",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_baseline_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-baseline",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_baseline_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-baseline",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "cleaned_baseline_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "cleaned-baseline",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade02_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade02",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade02_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade02",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade02_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade02",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade03_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade03",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade03_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade03",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade03_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade03",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade04_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade04",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade04_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade04",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade04_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade04",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade05_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade05",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade05_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade05",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade05_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade05",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade06_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade06",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade06_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade06",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade06_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade06",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade07_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade07",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade07_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade07",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade07_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade07",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade08_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade08",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade08_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade08",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade08_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade08",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade09_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade09",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade09_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade09",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade09_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade09",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade10_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade10",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade10_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade10",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade10_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade10",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade11_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade11",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade11_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade11",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade11_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade11",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade12_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade12",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade12_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade12",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_grade12_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-grade12",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_baseline_train": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-baseline",
+    "split": "train",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_baseline_validation": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-baseline",
+    "split": "validation",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "augmented_baseline_test": {
+    "hf_hub_url": "williamplacroix/graded_wikilarge",
+    "subset": "augmented-baseline",
+    "split": "test",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  }
+}

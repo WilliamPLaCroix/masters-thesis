@@ -1,0 +1,21 @@
+universe        = vanilla
+initialdir      = /nethome/wlacroix/LLaMA-Factory/
+executable      = /nethome/wlacroix/LLaMA-Factory/experiments/grade-ots.sh
+# arguments       = $(grade)
+log             = /scratch/wlacroix/logs/ots-graded.log
+output          = /scratch/wlacroix/logs/ots-graded.out
+error           = /scratch/wlacroix/logs/ots-graded.err
+
+# If all files are on the server, otherwise set to YES
+#should_transfer_files   = NO
+#when_to_transfer_output = ON_EXIT
+request_GPUs            = 1
+request_CPUs            = 10
+request_memory          = 50G
+getenv                  = True
+requirements            = (GPUs_GlobalMemoryMb >= 64000)
+#64000
++WantGPUHomeMounted     = true
++MaxWallTime = 604800
+
+queue 1

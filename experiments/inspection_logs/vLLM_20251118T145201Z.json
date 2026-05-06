@@ -1,0 +1,49 @@
+{
+  "backend": "vllm",
+  "engine_args": {
+    "disable_log_stats": "True",
+    "dtype": "auto",
+    "enable_lora": "False",
+    "enforce_eager": "True",
+    "gpu_memory_utilization": "0.5",
+    "max_model_len": "3072",
+    "max_num_seqs": "256",
+    "model": "/scratch/wlacroix/.cache/llama_factory/v1_cleaned_baseline_merged",
+    "pipeline_parallel_size": "1",
+    "tensor_parallel_size": "1",
+    "trust_remote_code": "True"
+  },
+  "example_prompt": "user\n\nRewrite this Input sentence to make it easily understandable by students in Grade 2\nSaint-L \u00e9onard - des-Bois is a commune in the Sarthe department in the region of Pays-de-la-Loire in north-western France.assistant\n\n",
+  "sampling_params": {
+    "best_of": null,
+    "frequency_penalty": 0.0,
+    "max_tokens": 1024,
+    "min_tokens": 0,
+    "n": 1,
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "seed": 42,
+    "skip_special_tokens": true,
+    "stop_token_ids": [
+      128001,
+      128008,
+      128009
+    ],
+    "temperature": 0,
+    "top_k": -1,
+    "top_p": 1.0
+  },
+  "template_stop_token_ids": [
+    128008,
+    128009
+  ],
+  "tokenizer_info": {
+    "bos_token_id": 128000,
+    "eos_token_id": 128009,
+    "model_max_length": 131072,
+    "pad_token_id": 128009,
+    "padding_side": "right",
+    "truncation_side": "right",
+    "unk_token_id": null
+  }
+}

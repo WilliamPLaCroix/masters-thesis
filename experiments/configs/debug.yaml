@@ -1,0 +1,56 @@
+### model
+model_name_or_path: /scratch/common_models/Llama-3.2-3B-Instruct-greedy
+trust_remote_code: True
+seed: 42
+use_fast_tokenizer: True
+
+### method
+stage: sft
+do_train: True
+finetuning_type: lora
+lora_rank: 8
+lora_alpha: 16
+lora_target: all
+lora_dropout: 0.05
+
+### dataset
+dataset: debug
+template: llama3
+cutoff_len: 1024
+#max_samples: 1000
+overwrite_cache: True
+preprocessing_num_workers: 16
+train_on_prompt: False
+
+### output
+output_dir: /scratch/wlacroix/.cache/llama_factory/debug_adapter
+logging_steps: 10
+save_steps: 10
+plot_loss: True
+overwrite_output_dir: True
+
+### train
+per_device_train_batch_size: 8
+gradient_accumulation_steps: 4
+learning_rate: 1.0e-4
+num_train_epochs: 50
+lr_scheduler_type: cosine
+warmup_ratio: 0.2
+bf16: True
+ddp_timeout: 180000000
+
+### eval
+do_eval: True
+eval_dataset: debug
+per_device_eval_batch_size: 32
+eval_strategy: steps
+eval_steps: 10
+predict_with_generate: False
+
+#if you want to save best model:
+save_strategy: steps
+save_total_limit: 3
+load_best_model_at_end: True
+metric_for_best_model: "eval_debug_fkgl"
+greater_is_better: False  # Higher SARI is better
+

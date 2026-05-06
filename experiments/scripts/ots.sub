@@ -1,0 +1,23 @@
+universe        = vanilla
+initialdir      = /nethome/wlacroix/LLaMA-Factory/
+executable      = /nethome/wlacroix/LLaMA-Factory/experiments/ots.sh
+arguments       = $(window_size) $(weight_method) $(weight_balance) $(merge_method)
+log             = /scratch/wlacroix/logs/ots.log
+output          = /scratch/wlacroix/logs/ots.out
+error           = /scratch/wlacroix/logs/ots.err
+
+# If all files are on the server, otherwise set to YES
+#should_transfer_files   = NO
+#when_to_transfer_output = ON_EXIT
+request_GPUs            = 1
+request_CPUs            = 10
+request_memory          = 50G
+getenv                  = True
+requirements            = (GPUs_GlobalMemoryMb >= 64000)
+#64000
++WantGPUHomeMounted     = true
++MaxWallTime = 604800
+
+queue window_size, weight_method, weight_balance, merge_method from (
+2, proximity, average, linear
+)

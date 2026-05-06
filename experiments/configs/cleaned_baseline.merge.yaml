@@ -1,0 +1,11 @@
+### model
+model_name_or_path: /scratch/common_models/Llama-3.2-3B
+adapter_name_or_path: /scratch/wlacroix/.cache/llama_factory/v2_baseline-adapter
+trust_remote_code: true
+template: llama3
+
+### export
+export_dir: /scratch/wlacroix/.cache/llama_factory/v2_baseline_merged
+export_legacy_format: false
+export_size: 5
+export_device: cpu

@@ -1,0 +1,24 @@
+universe        = vanilla
+initialdir      = /nethome/wlacroix/LLaMA-Factory/
+executable      = /nethome/wlacroix/LLaMA-Factory/experiments/baseline.sh
+# arguments       = $(ITERATION)
+log             = /scratch/wlacroix/logs/baseline.log
+output          = /scratch/wlacroix/logs/baseline.out
+error           = /scratch/wlacroix/logs/baseline.err
+# If all files are on the server, otherwise set to YES
+#should_transfer_files   = NO
+#when_to_transfer_output = ON_EXIT
+request_GPUs            = 1
+request_CPUs            = 10
+request_memory          = 50G
+getenv                  = True
+requirements            = (GPUs_GlobalMemoryMb >= 64000)
+#64000
++WantGPUHomeMounted     = true
++MaxWallTime = 604800
+
+queue 1
+
+# queue iteration from (
+# 69
+# )
